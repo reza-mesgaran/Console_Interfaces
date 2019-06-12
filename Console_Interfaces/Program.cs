@@ -12,14 +12,20 @@ namespace Console_Interfaces
         {
         }
     }
-     interface IMyInterface           //Interface is a public class which all Interface's members aren't implemented !
+    interface IMyInterface           //Interface is a public class which all Interface's members aren't implemented !
     {
         // int MyField;              Error : Interfaces can not have fields
-        int MyProperty { get; set;  // Interfaces can have property
+        int MyProperty { get; set; }  // Interfaces can have property
         void MyMethod();
     }
 
-    class MyClass : IMyInterface   //Any class which Inherited from Interface should Implement Interface members.
+
+    interface IMyInterface2   //My second Interface
+        {
+
+        }
+
+    class MyClass : IMyInterface  //Any class which Inherited from Interface should Implement Interface members.
     {
         public int MyProperty { get ; set ; }   //Interface's Property should re-define
 
@@ -27,5 +33,26 @@ namespace Console_Interfaces
         {
             Console.WriteLine("I am Implemented method of the Interface");
         }
+        
     }
+
+    class MyClass2 : IMyInterface, IMyInterface2     // Interfaces able developer to do Multiple Inheritance
+    {
+        public int MyProperty { get; set; }
+
+        public void MyMethod()
+        {
+            
+        }
+    }
+
+
 }
+
+/* 
+Note:
+
+1) Interface's member and Abstract-Class's member both of them doesn't have body and the class which inherited from them should implement those members;
+2)Interface can have only (methods, properties, events or indexers-(NOT FIELD)) BUT Abstract accept all type of members (also Field)
+
+*/
