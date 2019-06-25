@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+Interface:
+    1.Contains only the signatures of methods, properties, events or indexers. (Not Field)
+    2.No Implementation
+    3.No access Modifier
+    4.Interface members without(Virtual/Override)
+*/
 namespace Console_Interfaces
 {
     class Program
@@ -21,19 +27,19 @@ namespace Console_Interfaces
 
 
     interface IMyInterface2   //My second Interface
-        {
+    {
 
-        }
+    }
 
     class MyClass : IMyInterface  //Any class which Inherited from Interface should Implement Interface members.
     {
-        public int MyProperty { get ; set ; }   //Interface's Property should re-define
+        public int MyProperty { get; set; }   //Interface's Property should re-define
 
-        public void MyMethod()          
+        public void MyMethod()
         {
             Console.WriteLine("I am Implemented method of the Interface");
         }
-        
+
     }
 
     class MyClass2 : IMyInterface, IMyInterface2     // Interfaces able developer to do Multiple Inheritance
@@ -42,7 +48,7 @@ namespace Console_Interfaces
 
         public void MyMethod()
         {
-            
+
         }
     }
 
